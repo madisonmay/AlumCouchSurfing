@@ -13,7 +13,7 @@ var app = express(), db;
 
 app.configure(function () {
   console.log(process.env.MONGOLAB_URI);
-  db = mongojs(process.env.MONGOLAB_URI || 'linked', ['students']);
+  db = mongojs(process.env.MONGOLAB_URI || 'olinbnb', ['alumni']);
   app.set('port', process.env.PORT || 3000);
   app.set('views', __dirname + '/views');
   app.set('view engine', 'jade');
