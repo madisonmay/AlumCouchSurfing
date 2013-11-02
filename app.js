@@ -39,7 +39,7 @@ app.configure('development', function () {
 });
 
 app.configure('production', function () {
-  app.set('host', 'olin-linked.herokuapp.com');
+  app.set('host', 'olinbnb.herokuapp.com');
 });
 
 /**
@@ -48,7 +48,7 @@ app.configure('production', function () {
 
 app.get('/:uid', function (req, res) {
   console.log(req.params.uid);
-  db.students.findOne({'uid': parseInt(req.params.uid)}, function (err, student) {
+  db.alumni.findOne({'uid': parseInt(req.params.uid)}, function (err, student) {
     if (student) {
       res.json(student);
     } else {
