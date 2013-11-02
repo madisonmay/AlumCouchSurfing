@@ -46,13 +46,12 @@ app.configure('production', function () {
  * Helpful
  */
 
-app.get('/:uid', function (req, res) {
-  console.log(req.params.uid);
-  db.alumni.findOne({'uid': parseInt(req.params.uid)}, function (err, student) {
-    if (student) {
-      res.json(student);
+app.get('/', function (req, res) {
+  db.alumni.find({}, function (err, alums) {
+    if (alums) {
+      res.json(alums);
     } else {
-      res.json({});
+      res.json([]);
     }
   })
 });
