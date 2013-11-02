@@ -47,9 +47,9 @@ app.configure('production', function () {
  */
 
 app.get('/', function (req, res) {
-  db.alumni.find({}, function (err, alums) {
-    if (alums) {
-      res.json(alums);
+  db.alumni.find({}, function (err, alumni) {
+    if (alumni) {
+      res.json(alumni);
     } else {
       res.json([]);
     }
