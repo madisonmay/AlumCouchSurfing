@@ -49,7 +49,7 @@ app.configure('production', function () {
 app.get('/', function (req, res) {
   db.alumni.find({}, function (err, alumni) {
     if (alumni) {
-      res.json(alumni);
+      res.json({"alumni": alumni});
     } else {
       res.json([]);
     }
